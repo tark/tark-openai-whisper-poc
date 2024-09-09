@@ -8,7 +8,7 @@ class Mock extends StatelessWidget {
     return Container(
       height: 100,
       width: 100,
-      color: Colors.pink,
+      color: Colors.red,
     );
   }
 }

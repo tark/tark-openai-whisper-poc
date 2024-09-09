@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
+import 'package:geolocation_poc/ui/ui_constants.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
+import '../../util/log.dart';
 import '../common_widgets/texts.dart';
-import '../ui_constants.dart';
 
 class MyCheckbox extends StatelessWidget {
   const MyCheckbox({
@@ -70,8 +72,7 @@ class MyCheckbox extends StatelessWidget {
           ? AppImages.checkBoxCheckedDarkIcon
           : AppImages.checkBoxDarkIcon;
     } else {
-      icon =
-      checked ? AppImages.checkBoxCheckedIcon : AppImages.checkBoxIcon;
+      icon = checked ? AppImages.checkBoxCheckedIcon : AppImages.checkBoxIcon;
     }
 
     return SvgPicture.asset(icon);

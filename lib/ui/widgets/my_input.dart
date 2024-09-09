@@ -4,11 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
-import 'package:tark_openai_whisper_poc/util/string_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
+import 'package:geolocation_poc/util/string_extensions.dart';
+import 'package:geolocation_poc/util/util.dart';
 
-import '../../util/util.dart';
-import '../common_widgets/date_picker_modal.dart';
 import '../common_widgets/texts.dart';
 import '../common_widgets/animated_icon.dart';
 import '../ui_constants.dart';
@@ -156,23 +155,6 @@ class _MyInputState extends State<MyInput> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _isDate()
-          ? () async {
-              final date = await showBottomModal<DateTime>(
-                context: context,
-                builder: (c) => DatePickerModal(
-                  initialDate: widget.dateController?.date ?? DateTime.now(),
-                ),
-              );
-
-              if (date != null) {
-                // using UTC, because we keep dates in UTC on server side
-                final dateUtc = DateTime.utc(date.year, date.month, date.day);
-                widget.dateController?.date = dateUtc;
-                _controller.text = dateFormat.format(dateUtc);
-              }
-            }
-          : null,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Container(
@@ -226,11 +208,11 @@ class _MyInputState extends State<MyInput> {
                       if (widget.type == MyInputType.cardExpires)
                         CreditCardExpirationDateFormatter(),
                       // if (_isMoney())
-                        // CurrencyTextInputFormatter(
-                        //   locale: 'en',
-                        //   decimalDigits: 0,
-                        //   symbol: '\$',
-                        // ),
+                      // CurrencyTextInputFormatter(
+                      //   locale: 'en',
+                      //   decimalDigits: 0,
+                      //   symbol: '\$',
+                      // ),
                       if (widget.caps) UpperCaseTextFormatter(),
                       if (_isName()) CapitalizationFormatter(),
                     ],
@@ -258,13 +240,13 @@ class _MyInputState extends State<MyInput> {
                 if (_isPhone() && _showCountryInfo) _countryInfo(),
                 if (_isCard()) _cardInfo(),
                 // if (_isCard() && !_isValid() && widget.onCardScanned != null)
-                  IconButton(
-                    onPressed: () => cardScanChannel.invokeMethod('scanCard'),
-                    icon: Icon(
-                      Icons.camera_alt_outlined,
-                      color: context.secondary.withOpacity(0.2),
-                    ),
+                IconButton(
+                  onPressed: () => cardScanChannel.invokeMethod('scanCard'),
+                  icon: Icon(
+                    Icons.camera_alt_outlined,
+                    color: context.secondary.withOpacity(0.2),
                   ),
+                ),
                 if (!_isValid() && widget.trailing != null) widget.trailing!,
                 if (!_isValid() && widget.trailingButton != null)
                   _trailingButton(),
@@ -343,7 +325,7 @@ class _MyInputState extends State<MyInput> {
         ClipRRect(
           borderRadius: BorderRadius.circular(2),
           child: Image.network(
-            'https://flagsapi.com/${code?.toUpperCase()}/flat/64.png',
+            'https://flagsapi.com/${code.toUpperCase()}/flat/64.png',
             width: 24,
             height: 24,
             fit: BoxFit.fill,
@@ -519,7 +501,6 @@ class _MyInputState extends State<MyInput> {
       ),
     );
   }
-
 }
 
 class UpperCaseTextFormatter extends TextInputFormatter {

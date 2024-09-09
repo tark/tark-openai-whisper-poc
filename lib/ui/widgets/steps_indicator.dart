@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 import '../ui_constants.dart';
 
@@ -26,7 +26,9 @@ class StepsIndicator extends StatelessWidget {
               child: SizedBox(
                 height: 2,
                 child: ColoredBox(
-                  color: i <= step ? context.accent : context.primary.withOpacity(0.1),
+                  color: i <= step
+                      ? context.accent
+                      : context.primary.withOpacity(0.1),
                 ),
               ),
             ),

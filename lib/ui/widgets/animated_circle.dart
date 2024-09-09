@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 const _min = 0.0;
 const _max = 1.0;
@@ -49,7 +49,6 @@ class _AnimatedCircleState extends State<AnimatedCircle>
 
   @override
   Widget build(BuildContext context) {
-
     return Center(
       child: AnimatedBuilder(
         animation: _animation,
@@ -70,7 +69,7 @@ class _AnimatedCircleState extends State<AnimatedCircle>
     );
   }
 
-  Widget _circle(double value){
+  Widget _circle(double value) {
     return Container(
       width: value * _maxSize,
       height: value * _maxSize,

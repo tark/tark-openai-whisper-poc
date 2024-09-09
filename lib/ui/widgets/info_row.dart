@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
-import '../../util/context_extensions.dart';
 import '../common_widgets/texts.dart';
 import '../ui_constants.dart';
 
@@ -48,7 +48,7 @@ class InfoRow extends StatelessWidget {
         const Horizontal.small(),
         Expanded(
           child: Texts(
-            title.isEmpty ? 'Place to be defined': title,
+            title.isEmpty ? 'Place to be defined' : title,
             fontSize: AppSize.fontRegular,
             fontWeight: FontWeight.w400,
             color: color,

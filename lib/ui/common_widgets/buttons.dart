@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 import '../ui_constants.dart';
 import 'texts.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 import '../common_widgets/texts.dart';
 import '../ui_constants.dart';
@@ -30,7 +30,7 @@ class Warning extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment:
-        isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
+            isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
         children: [
           Padding(
             padding: AppPadding.verticalMicro,

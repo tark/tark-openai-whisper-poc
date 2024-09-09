@@ -2,78 +2,78 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../ui_constants.dart';
-import '../../util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 const _defaultTextLinkColorDisabled = Colors.white30;
 const _defaultTextSize = AppSize.fontRegular;
 const _defaultFontWeight = FontWeight.w400;
 const _defaultMaxLines = 1;
 const _defaultTextOverflow = TextOverflow.ellipsis;
-const _defaultFontFamily = 'Raleway'; // Set the default font family
 
 class Texts extends StatelessWidget {
   const Texts(
-      this.text, {
-        this.color,
-        this.linkColor,
-        this.fontSize,
-        this.isCenter = false,
-        this.isRight = false,
-        this.fontWeight,
-        this.overflow,
-        this.maxLines,
-        this.height,
-        this.letterSpacing,
-        this.capitalize,
-        this.onPressed,
-        this.isLink = false,
-        this.richText,
-        this.decoration,
-        this.isBlue = false,
-        this.showShadow = false,
-        this.gradient,
-      });
+    this.text, {
+    this.color,
+    this.linkColor,
+    this.fontSize,
+    this.isCenter = false,
+    this.isRight = false,
+    this.fontWeight,
+    this.overflow,
+    this.maxLines,
+    this.height,
+    this.letterSpacing,
+    this.capitalize,
+    this.onPressed,
+    this.isLink = false,
+    this.richText,
+    this.decoration,
+    this.isBlue = false,
+    this.showShadow = false,
+    this.gradient,
+  });
 
   const Texts.title(
-      final String? text, {
-        Color? color,
-        Color? linkColor,
-        double? textSize,
-        bool? isCenter,
-        bool? isRight,
-        FontWeight? fontWeight,
-        TextOverflow? overflow,
-        int? maxLines,
-        double? height,
-        double? letterSpacing,
-        bool? capitalize,
-        VoidCallback? onPressed,
-        bool? isLink,
-        List<RichTextData>? richTextDatas,
-        TextDecoration? decoration,
-        bool? isBlue,
-        bool? showShadow,
-      }) : this(
-    text,
-    color: color,
-    linkColor: linkColor,
-    fontSize: AppSize.fontNormal,
-    isCenter: isCenter,
-    isRight: isRight,
-    fontWeight: FontWeight.w600,
-    overflow: overflow,
-    maxLines: maxLines,
-    height: height,
-    letterSpacing: letterSpacing,
-    capitalize: capitalize,
-    onPressed: onPressed,
-    isLink: isLink,
-    richText: richTextDatas,
-    decoration: decoration,
-    isBlue: isBlue,
-    showShadow: showShadow,
-  );
+    final String? text, {
+    Color? color,
+    Color? linkColor,
+    double? textSize,
+    bool? isCenter,
+    bool? isRight,
+    FontWeight? fontWeight,
+    TextOverflow? overflow,
+    int? maxLines,
+    double? height,
+    double? letterSpacing,
+    bool? capitalize,
+    VoidCallback? onPressed,
+    bool? isLink,
+    List<RichTextData>? richTextDatas,
+    TextDecoration? decoration,
+    bool? isBlue,
+    bool? showShadow,
+  }) : this(
+          text,
+          color: color,
+          linkColor: linkColor,
+          fontSize: AppSize.fontNormal,
+          isCenter: isCenter,
+          isRight: isRight,
+          fontWeight: FontWeight.w600,
+          overflow: overflow,
+          maxLines: maxLines,
+          height: height,
+          letterSpacing: letterSpacing,
+          capitalize: capitalize,
+          onPressed: onPressed,
+          isLink: isLink,
+          richText: richTextDatas,
+          decoration: decoration,
+          isBlue: isBlue,
+          showShadow: showShadow,
+        );
 
+  //
   final String? text;
   final Color? color;
   final Color? linkColor;
@@ -110,17 +110,16 @@ class Texts extends StatelessWidget {
           children: (richText ?? [])
               .map(
                 (data) => TextSpan(
-              text: data.text,
-              style: TextStyle(
-                fontSize: data.size ?? fontSize ?? _defaultTextSize,
-                color: data.color ?? color,
-                fontWeight:
-                data.fontWeight ?? fontWeight ?? _defaultFontWeight,
-                height: height,
-                fontFamily: _defaultFontFamily, // Use Raleway font
-              ),
-            ),
-          )
+                  text: data.text,
+                  style: TextStyle(
+                    fontSize: data.size ?? fontSize ?? _defaultTextSize,
+                    color: data.color ?? color,
+                    fontWeight:
+                        data.fontWeight ?? fontWeight ?? _defaultFontWeight,
+                    height: height,
+                  ),
+                ),
+              )
               .toList(),
         ),
         textAlign: (isCenter ?? false)
@@ -139,14 +138,13 @@ class Texts extends StatelessWidget {
       decorationThickness: 2,
       shadows: (showShadow ?? false)
           ? [
-        const Shadow(
-          offset: Offset(1, 1),
-          blurRadius: 0,
-          color: Color.fromARGB(60, 0, 0, 0),
-        ),
-      ]
+              const Shadow(
+                offset: Offset(1, 1),
+                blurRadius: 0,
+                color: Color.fromARGB(60, 0, 0, 0),
+              ),
+            ]
           : null,
-      fontFamily: _defaultFontFamily, // Use Raleway font
     );
 
     if (isLink ?? false) {
@@ -198,77 +196,75 @@ class RichTextData {
   final double? size;
 
   RichTextData(
-      this.text, {
-        this.color,
-        this.fontWeight,
-        this.size,
-      });
+    this.text, {
+    this.color,
+    this.fontWeight,
+    this.size,
+  });
 
   RichTextData.grey(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = Colors.black54;
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = Colors.black54;
 
   RichTextData.greySmall(
-      this.text, {
-        this.fontWeight,
-      })  : color = Colors.black54,
+    this.text, {
+    this.fontWeight,
+  })  : color = Colors.black54,
         this.size = AppSize.fontSmall;
 
   RichTextData.blue(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = Colors.blue;
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = Colors.blue;
 
   RichTextData.blueSmall(
-      this.text, {
-        this.fontWeight,
-      })  : color = Colors.blue,
+    this.text, {
+    this.fontWeight,
+  })  : color = Colors.blue,
         size = AppSize.fontSmall;
 
   RichTextData.greyLight(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = Colors.white24;
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = Colors.white24;
 
   RichTextData.green(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = AppColors.green;
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = AppColors.green;
 
   RichTextData.greenLight(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = AppColors.green.withOpacity(0.4);
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = AppColors.green.withOpacity(0.4);
 
   RichTextData.red(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = Colors.red;
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = Colors.red;
 
   RichTextData.redLight(
-      this.text, {
-        this.fontWeight,
-        this.size,
-      }) : color = Colors.pink.withOpacity(0.4);
+    this.text, {
+    this.fontWeight,
+    this.size,
+  }) : color = Colors.red.withOpacity(0.4);
 
   RichTextData.bold(
-      this.text, {
-        this.size,
-        this.color,
-      })  :
-        fontWeight = FontWeight.bold;
+    this.text, {
+    this.size,
+    this.color,
+  }) : fontWeight = FontWeight.bold;
 
   RichTextData.light(
-      this.text, {
-        this.size,
-        this.color,
-      })  :
-        fontWeight = FontWeight.w300;
+    this.text, {
+    this.size,
+    this.color,
+  }) : fontWeight = FontWeight.w300;
 }

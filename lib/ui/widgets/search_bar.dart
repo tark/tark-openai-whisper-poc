@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../util/context_extensions.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 import '../common_widgets/inputs.dart';
 import '../common_widgets/spinner.dart';

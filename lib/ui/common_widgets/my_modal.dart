@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tark_openai_whisper_poc/ui/ui_constants.dart';
+import 'package:geolocation_poc/ui/ui_constants.dart';
 
 import 'confirm_view.dart';
 

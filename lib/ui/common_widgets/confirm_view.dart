@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:tark_openai_whisper_poc/ui/ui_constants.dart';
-import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
+import 'package:geolocation_poc/ui/ui_constants.dart';
+import 'package:geolocation_poc/util/context_extensions.dart';
 
 import 'buttons.dart';
 import 'texts.dart';
@@ -71,7 +71,9 @@ class ConfirmView extends StatelessWidget {
                 Expanded(
                   child: Buttons.flat(
                     text: cancelText ?? 'cancel'.tr(),
-                    buttonColor: danger ? context.secondary.withOpacity(0.1) : context.error,
+                    buttonColor: danger
+                        ? context.secondary.withOpacity(0.1)
+                        : context.error,
                     textColor: danger ? context.primary : null,
                     iconData: cancelIcon ?? Icons.close,
                     onPressed: () {
