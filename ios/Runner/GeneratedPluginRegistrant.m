@@ -6,16 +6,10 @@
 
 #import "GeneratedPluginRegistrant.h"
 
-#if __has_include(<audio_service/AudioServicePlugin.h>)
-#import <audio_service/AudioServicePlugin.h>
+#if __has_include(<audio_streamer/SwiftAudioStreamerPlugin.h>)
+#import <audio_streamer/SwiftAudioStreamerPlugin.h>
 #else
-@import audio_service;
-#endif
-
-#if __has_include(<audio_session/AudioSessionPlugin.h>)
-#import <audio_session/AudioSessionPlugin.h>
-#else
-@import audio_session;
+@import audio_streamer;
 #endif
 
 #if __has_include(<audioplayers_darwin/AudioplayersDarwinPlugin.h>)
@@ -24,28 +18,34 @@
 @import audioplayers_darwin;
 #endif
 
-#if __has_include(<background_fetch/BackgroundFetchPlugin.h>)
-#import <background_fetch/BackgroundFetchPlugin.h>
+#if __has_include(<bugsnag_flutter/BugsnagFlutterPlugin.h>)
+#import <bugsnag_flutter/BugsnagFlutterPlugin.h>
 #else
-@import background_fetch;
+@import bugsnag_flutter;
 #endif
 
-#if __has_include(<device_info_plus/FPPDeviceInfoPlusPlugin.h>)
-#import <device_info_plus/FPPDeviceInfoPlusPlugin.h>
+#if __has_include(<camera_avfoundation/CameraPlugin.h>)
+#import <camera_avfoundation/CameraPlugin.h>
 #else
-@import device_info_plus;
+@import camera_avfoundation;
 #endif
 
-#if __has_include(<flutter_background_geolocation/TSBackgroundGeolocationPlugin.h>)
-#import <flutter_background_geolocation/TSBackgroundGeolocationPlugin.h>
+#if __has_include(<ffmpeg_kit_flutter/FFmpegKitFlutterPlugin.h>)
+#import <ffmpeg_kit_flutter/FFmpegKitFlutterPlugin.h>
 #else
-@import flutter_background_geolocation;
+@import ffmpeg_kit_flutter;
 #endif
 
-#if __has_include(<flutter_compass/FlutterCompassPlugin.h>)
-#import <flutter_compass/FlutterCompassPlugin.h>
+#if __has_include(<flutter_avif_ios/FlutterAvifPlugin.h>)
+#import <flutter_avif_ios/FlutterAvifPlugin.h>
 #else
-@import flutter_compass;
+@import flutter_avif_ios;
+#endif
+
+#if __has_include(<flutter_inappwebview/InAppWebViewFlutterPlugin.h>)
+#import <flutter_inappwebview/InAppWebViewFlutterPlugin.h>
+#else
+@import flutter_inappwebview;
 #endif
 
 #if __has_include(<flutter_keyboard_visibility/FlutterKeyboardVisibilityPlugin.h>)
@@ -54,46 +54,22 @@
 @import flutter_keyboard_visibility;
 #endif
 
-#if __has_include(<flutter_local_notifications/FlutterLocalNotificationsPlugin.h>)
-#import <flutter_local_notifications/FlutterLocalNotificationsPlugin.h>
-#else
-@import flutter_local_notifications;
-#endif
-
 #if __has_include(<flutter_secure_storage/FlutterSecureStoragePlugin.h>)
 #import <flutter_secure_storage/FlutterSecureStoragePlugin.h>
 #else
 @import flutter_secure_storage;
 #endif
 
-#if __has_include(<geocoding_ios/GeocodingPlugin.h>)
-#import <geocoding_ios/GeocodingPlugin.h>
+#if __has_include(<flutter_sound/FlutterSound.h>)
+#import <flutter_sound/FlutterSound.h>
 #else
-@import geocoding_ios;
+@import flutter_sound;
 #endif
 
-#if __has_include(<geolocator_apple/GeolocatorPlugin.h>)
-#import <geolocator_apple/GeolocatorPlugin.h>
+#if __has_include(<intercom_flutter/IntercomFlutterPlugin.h>)
+#import <intercom_flutter/IntercomFlutterPlugin.h>
 #else
-@import geolocator_apple;
-#endif
-
-#if __has_include(<google_maps_flutter_ios/FLTGoogleMapsPlugin.h>)
-#import <google_maps_flutter_ios/FLTGoogleMapsPlugin.h>
-#else
-@import google_maps_flutter_ios;
-#endif
-
-#if __has_include(<location/LocationPlugin.h>)
-#import <location/LocationPlugin.h>
-#else
-@import location;
-#endif
-
-#if __has_include(<map_launcher/MapLauncherPlugin.h>)
-#import <map_launcher/MapLauncherPlugin.h>
-#else
-@import map_launcher;
+@import intercom_flutter;
 #endif
 
 #if __has_include(<package_info_plus/FPPPackageInfoPlusPlugin.h>)
@@ -114,16 +90,28 @@
 @import permission_handler_apple;
 #endif
 
+#if __has_include(<record_darwin/RecordPlugin.h>)
+#import <record_darwin/RecordPlugin.h>
+#else
+@import record_darwin;
+#endif
+
+#if __has_include(<share_plus/FPPSharePlusPlugin.h>)
+#import <share_plus/FPPSharePlusPlugin.h>
+#else
+@import share_plus;
+#endif
+
 #if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)
 #import <shared_preferences_foundation/SharedPreferencesPlugin.h>
 #else
 @import shared_preferences_foundation;
 #endif
 
-#if __has_include(<sqflite/SqflitePlugin.h>)
-#import <sqflite/SqflitePlugin.h>
+#if __has_include(<uni_links/UniLinksPlugin.h>)
+#import <uni_links/UniLinksPlugin.h>
 #else
-@import sqflite;
+@import uni_links;
 #endif
 
 #if __has_include(<url_launcher_ios/URLLauncherPlugin.h>)
@@ -132,44 +120,28 @@
 @import url_launcher_ios;
 #endif
 
-#if __has_include(<vibration/VibrationPlugin.h>)
-#import <vibration/VibrationPlugin.h>
-#else
-@import vibration;
-#endif
-
-#if __has_include(<wakelock_plus/WakelockPlusPlugin.h>)
-#import <wakelock_plus/WakelockPlusPlugin.h>
-#else
-@import wakelock_plus;
-#endif
-
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
-  [AudioServicePlugin registerWithRegistrar:[registry registrarForPlugin:@"AudioServicePlugin"]];
-  [AudioSessionPlugin registerWithRegistrar:[registry registrarForPlugin:@"AudioSessionPlugin"]];
+  [SwiftAudioStreamerPlugin registerWithRegistrar:[registry registrarForPlugin:@"SwiftAudioStreamerPlugin"]];
   [AudioplayersDarwinPlugin registerWithRegistrar:[registry registrarForPlugin:@"AudioplayersDarwinPlugin"]];
-  [BackgroundFetchPlugin registerWithRegistrar:[registry registrarForPlugin:@"BackgroundFetchPlugin"]];
-  [FPPDeviceInfoPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FPPDeviceInfoPlusPlugin"]];
-  [TSBackgroundGeolocationPlugin registerWithRegistrar:[registry registrarForPlugin:@"TSBackgroundGeolocationPlugin"]];
-  [FlutterCompassPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterCompassPlugin"]];
+  [BugsnagFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"BugsnagFlutterPlugin"]];
+  [CameraPlugin registerWithRegistrar:[registry registrarForPlugin:@"CameraPlugin"]];
+  [FFmpegKitFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"FFmpegKitFlutterPlugin"]];
+  [FlutterAvifPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterAvifPlugin"]];
+  [InAppWebViewFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"InAppWebViewFlutterPlugin"]];
   [FlutterKeyboardVisibilityPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterKeyboardVisibilityPlugin"]];
-  [FlutterLocalNotificationsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterLocalNotificationsPlugin"]];
   [FlutterSecureStoragePlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterSecureStoragePlugin"]];
-  [GeocodingPlugin registerWithRegistrar:[registry registrarForPlugin:@"GeocodingPlugin"]];
-  [GeolocatorPlugin registerWithRegistrar:[registry registrarForPlugin:@"GeolocatorPlugin"]];
-  [FLTGoogleMapsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTGoogleMapsPlugin"]];
-  [LocationPlugin registerWithRegistrar:[registry registrarForPlugin:@"LocationPlugin"]];
-  [MapLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"MapLauncherPlugin"]];
+  [FlutterSound registerWithRegistrar:[registry registrarForPlugin:@"FlutterSound"]];
+  [IntercomFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"IntercomFlutterPlugin"]];
   [FPPPackageInfoPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FPPPackageInfoPlusPlugin"]];
   [PathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"PathProviderPlugin"]];
   [PermissionHandlerPlugin registerWithRegistrar:[registry registrarForPlugin:@"PermissionHandlerPlugin"]];
+  [RecordPlugin registerWithRegistrar:[registry registrarForPlugin:@"RecordPlugin"]];
+  [FPPSharePlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FPPSharePlusPlugin"]];
   [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
-  [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
+  [UniLinksPlugin registerWithRegistrar:[registry registrarForPlugin:@"UniLinksPlugin"]];
   [URLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"URLLauncherPlugin"]];
-  [VibrationPlugin registerWithRegistrar:[registry registrarForPlugin:@"VibrationPlugin"]];
-  [WakelockPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"WakelockPlusPlugin"]];
 }
 
 @end
