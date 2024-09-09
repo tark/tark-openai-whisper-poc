@@ -1,12 +1,12 @@
-name: geolocation_poc
-description: Geolocation POC
+name: tark_openai_whisper_poc
+description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 0.0.1
 
 environment:
-  sdk: ">=2.19.0 <4.0.0"
+  sdk: ">=2.17.5 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,117 +14,81 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.5
-  flutter_bloc: ^8.1.6
-  provider: ^6.1.2
+  flutter_bloc: ^8.1.1
+  provider: ^6.0.4
   intl: ^0.19.0
   equatable: ^2.0.5
-  dio: ^5.6.0
-  flutter_secure_storage: ^9.2.2
-  json_annotation: ^4.9.0
-  build_runner: ^2.4.12
-  flutter_svg: ^2.0.10+1
-  flutter_multi_formatter: ^2.13.0
-  flutter_keyboard_visibility: ^6.0.0
-  font_awesome_flutter: ^10.7.0
-  dots_indicator: ^3.0.0
-  currency_text_input_formatter: ^2.2.3
-  uuid: ^4.4.2
-  google_maps_flutter: ^2.9.0
-  geocoding: ^3.0.0
-  url_launcher: ^6.3.0
-  pin_code_fields: ^8.0.1
-  flutter_dotenv: ^5.1.0
-  package_info_plus: ^8.0.2
-  shimmer: ^3.0.0
-  easy_localization: ^3.0.7
-  permission_handler: ^11.3.1
-  map_launcher: ^3.5.0
-  collection: ^1.18.0
-  path_provider: ^2.1.4
-  geolocator: ^13.0.1
-  location: ^6.0.2
-  audioplayers: ^6.1.0
-  flutter_background_geolocation: ^4.16.0
-  flutter_local_notifications: ^17.2.2
-  audio_service: ^0.18.15
-  slider_button: ^2.1.0
-  wakelock_plus: ^1.2.8
-  flutter_compass: ^0.8.0
-
+  dio: ^4.0.6
+  flutter_secure_storage: ^6.0.0
+  json_annotation: ^4.7.0
+  build_runner: ^2.3.2
+  screenshot: ^2.1.0
+  flutter_svg: ^1.1.5
+  syncfusion_flutter_datepicker: ^20.3.50
+  flutter_multi_formatter: ^2.8.0
+  flutter_keyboard_visibility: ^5.4.0
+  font_awesome_flutter: ^10.2.1
+  dots_indicator: ^2.1.0
+  currency_text_input_formatter: ^2.1.7
+  pull_to_refresh: ^2.0.0
+  camera: ^0.10.5+5
+  animated_text_kit: ^4.2.2
+  credit_card_type_detector: ^3.0.0
+  qr_flutter: ^4.1.0
+  uuid: ^3.0.7
+  url_launcher: ^6.1.6
+  dotted_border: ^2.0.0+2
+  pin_code_fields: ^7.4.0
+#  flutter_stripe: 9.2.0
+  flutter_dotenv: ^5.0.2
+  credit_card_validator: ^2.1.0
+  package_info_plus: ^4.0.1
+#  nfc_manager: ^3.2.0
+  shimmer: ^2.0.0
+  easy_localization: ^3.0.1
+  permission_handler: ^11.0.1
+  bugsnag_flutter: ^3.0.0
+  intercom_flutter: ^7.8.2
+  avatar_glow: ^2.0.2
+#  flutter_nfc_kit: ^3.3.1
+  ndef: ^0.3.1
+  uni_links: ^0.5.1
+  translit: ^2.0.1
+  youtube_player_flutter: ^8.1.2
+  collection: ^1.17.1
+  share_plus: ^7.1.0
+  flutter_avif: ^1.4.0
+  smooth_page_indicator: ^1.2.0+3
+  dart_openai: ^5.1.0
+  flutter_sound: ^9.0.0
+  path_provider: ^2.0.11
+  audioplayers: ^6.0.0
+  record: ^5.1.2
+  flutter_audio_waveforms: ^1.2.1+8
+  translator: ^1.0.0
+  noise_meter: ^5.0.2
+  ffmpeg_kit_flutter: ^4.5.1
 
 
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
   flutter_lints: ^2.0.0
   json_serializable: any
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.9.2
   lint: ^2.0.0
 
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icons/icon_cool.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
-  web:
-    generate: true
-    image_path: "assets/icons/icon_cool.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
-  windows:
-    generate: true
-    image_path: "assets/icons/icon_cool.png"
-    icon_size: 48 # min:48, max:256, default: 48
-  macos:
-    generate: true
-    image_path: "assets/icons/icon_cool.png"
+dependency_overrides:
+  http: ^1.1.0
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icons/icon_cool.png"
+  image_path: "assets/icon/icon.png"
 
 flutter:
   uses-material-design: true
 
   assets:
     - .env
-    - assets/icons/
-    - assets/images/
-    - assets/audio/
-
-  fonts:
-    - family: Graphik
-      fonts:
-        - asset: fonts/GraphikThin.otf
-          weight: 100
-        - asset: fonts/GraphikExtraLight.otf
-          weight: 200
-        - asset: fonts/GraphikLight.otf
-          weight: 300
-        - asset: fonts/GraphikRegular.otf
-          weight: 400
-        - asset: fonts/GraphikMedium.otf
-          weight: 500
-        - asset: fonts/GraphikSemiBold.otf
-          weight: 600
-        - asset: fonts/GraphikBold.otf
-          weight: 700
-        - asset: fonts/GraphikBlack.otf
-          weight: 800
-        - asset: fonts/GraphikSuper.otf
-          weight: 900
-    - family: Rubik
-      fonts:
-        - asset: fonts/Rubik-Light.ttf
-          weight: 300
-        - asset: fonts/Rubik-Regular.ttf
-          weight: 400
-        - asset: fonts/Rubik-Medium.ttf
-          weight: 500
-        - asset: fonts/Rubik-SemiBold.ttf
-          weight: 600
-        - asset: fonts/Rubik-Bold.ttf
-          weight: 700
-        - asset: fonts/Rubik-ExtraBold.ttf
-          weight: 800
-        - asset: fonts/Rubik-Black.ttf
-          weight: 900
+    -  assets/audio/test.mp3
