@@ -14,6 +14,32 @@ class Api {
 
   Dio? _dio;
 
+  Future<String> transcribe() async {
+    // curl --request POST \
+    // --url https://api.openai.com/v1/audio/transcriptions \
+    // --header "Authorization: Bearer $OPENAI_API_KEY" \
+    // --header 'Content-Type: multipart/form-data' \
+    // --form file=@/path/to/file/audio.mp3 \
+    // --form model=whisper-1
+
+    final response = await _post('audio/transcriptions', body: {
+      'file': 'audio.mp3',
+      'model': 'whisper-1',
+    });
+
+    return '';
+  }
+
+  Future<String> translate() async {
+    return '';
+    // curl --request POST \
+    // --url https://api.openai.com/v1/audio/translations \
+    // --header "Authorization: Bearer $OPENAI_API_KEY" \
+    // --header 'Content-Type: multipart/form-data' \
+    // --form file=@/path/to/file/german.mp3 \
+    // --form model=whisper-1
+  }
+
   //
   Future<dynamic> _get(
     String path, {
@@ -43,7 +69,7 @@ class Api {
       l('_get', 'error - type:     ${e.error.runtimeType}');
       l('_get', 'error - type dio: ${e.type}');
       l('_get', '---------------------------------');
-      throw e.message ?? 'Unknown error';
+      throw e.message;
     }
   }
 
@@ -83,7 +109,7 @@ class Api {
       l('_post', 'data:             ${e.response?.data.toString()}');
       l('_post', 'message:          ${e.message}');
       if (e.response?.data is String) {
-        throw e.message ?? 'Unknown error';
+        throw e.message;
       } else {
         throw e.response?.data['errorMsg'] ?? e.message;
       }
@@ -104,7 +130,7 @@ class Api {
       return response.data ?? {};
     } on DioError catch (e) {
       l('_delete', 'dio error - ${e.message}');
-      throw e.message ?? 'Unknown error';
+      throw e.message;
     }
   }
 
@@ -125,7 +151,7 @@ class Api {
       return response.data ?? {};
     } on DioError catch (e) {
       l('_put', 'dio error - ${e.message}');
-      throw e.message ?? 'Unknown error';
+      throw e.message;
     }
   }
 
@@ -142,7 +168,7 @@ class Api {
       return response?.data;
     } on DioError catch (e) {
       l('_patch', 'dio error - ${e.message}');
-      throw e.message ?? 'Unknown error';
+      throw e.message;
     }
   }
 }

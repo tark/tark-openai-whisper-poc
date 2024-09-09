@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
+import '../../util/context_extensions.dart';
 
 const _min = 0.0;
 const _max = 1.0;

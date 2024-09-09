@@ -9,7 +9,8 @@ class AudioVisualizer extends StatefulWidget {
   State<AudioVisualizer> createState() => _AudioVisualizerState();
 }
 
-class _AudioVisualizerState extends State<AudioVisualizer> with SingleTickerProviderStateMixin {
+class _AudioVisualizerState extends State<AudioVisualizer>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   var visualizer = 1;
@@ -36,7 +37,6 @@ class _AudioVisualizerState extends State<AudioVisualizer> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
-
     return AnimatedBuilder(
       animation: _animation,
       builder: (context, child) {
@@ -55,7 +55,6 @@ class _AudioVisualizerState extends State<AudioVisualizer> with SingleTickerProv
 }
 
 class CurvePainter extends CustomPainter {
-
   final double offsetY;
 
   CurvePainter(this.offsetY);
@@ -71,7 +70,6 @@ class CurvePainter extends CustomPainter {
       ..color = Colors.red
       ..style = PaintingStyle.fill;
 
-
     // Define the center of the circle and the radius
     Offset center = Offset(size.width / 2, size.height / 2);
     double radius = size.width * 0.35;
@@ -83,7 +81,9 @@ class CurvePainter extends CustomPainter {
       double angle = (2 * pi / numPoints) * i;
       points.add(Offset(
         center.dx + radius * cos(angle),
-        center.dy + radius * sin(angle) + offsetY, // Add the offsetY to move the dots up and down
+        center.dy +
+            radius * sin(angle) +
+            offsetY, // Add the offsetY to move the dots up and down
       ));
     }
 

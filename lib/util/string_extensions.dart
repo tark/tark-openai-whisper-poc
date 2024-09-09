@@ -1,3 +1,5 @@
+import 'package:translit/translit.dart';
+
 extension StringExtention on String {
   String capitalize() {
     if (isEmpty) {
@@ -31,5 +33,11 @@ extension StringExtention on String {
     }
 
     return toLowerCase().contains(query.toLowerCase());
+  }
+
+  String translit() {
+    return Translit().toTranslit(
+      source: this,
+    );
   }
 }

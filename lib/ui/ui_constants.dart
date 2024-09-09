@@ -25,7 +25,7 @@ class AppImages {
   static const wristbandNewErrorIcon = '$icons/wristband_new_error.svg';
   static const searchIcon = '$icons/search.svg';
   static const calendarIcon = '$icons/calendar_small.svg';
-  static const locationIcon = '$icons/location.svg';
+  static const locationIcon = '$icons/location_small.svg';
   static const filterIcon = '$icons/filter.svg';
   static const checkIcon = '$icons/check.svg';
   static const checkBigIcon = '$icons/check_big.svg';
@@ -65,6 +65,11 @@ class AppImages {
   static const promoCashIconPng = '$icons/promo_cash.png';
   static const facebookIcon = '$icons/facebook.svg';
   static const googleIcon = '$icons/google.svg';
+  static const gptIcon = '$icons/gpt.svg';
+  static const capabilitiesIcon = '$icons/capabilities.svg';
+  static const examplesIcon = '$icons/examples.svg';
+  static const limitationsIcon = '$icons/limitations.svg';
+  // static const arrowRightIcon = '$icons/limitations.svg';
   static const spotifyIcon = '$icons/spotify.svg';
   static const nfcSlashIcon = '$icons/nfc_slash.svg';
   static const socialIconFacebook = '$icons/social_icon_facebook.svg';
@@ -105,7 +110,7 @@ class AppColors {
   static const cardBackground = Color(0xccF2F4F5);
   static const gradientBlue = Color(0xff4B50C7);
   static const gradientYellow = Color(0xffC19A4D);
-  static const dialogBarrier = Color(0xFF000000);
+  static const dialogBarrier = Color(0xD92C2E3E);
   static const dialogBarrierStatusBar = Color(0x332C2E3E);
   static const buttonText = Color(0xFFF8F8F8);
   static const buttonSecondary = Color(0xFFE0E1EB);
@@ -115,12 +120,12 @@ class AppColors {
 }
 
 class AppColorsDarkTheme {
-  static const background = Color(0xff1b1b22);
-  static const cardBackground = Color(0xFF242433);
+  static const background = Color(0xff212121);
+  static const cardBackground = Color(0xFF2F2F2F);
   static const blue = Color(0xff5566FF);
   static const blueSecondary = Color(0x80a09ae4);
-  static const text = Color(0xffF0F1F5);
-  static const textSecondary = Color(0xFF888AA6);
+  static const text = Color(0xffEFEFEF);
+  static const textSecondary = Color(0xFF969696);
   static const red = Color(0xffEB5757);
   static const dialogBarrier = Color(0xD92C2E3E);
   static const dialogBarrierStatusBar = Color(0x882C2E3E);
@@ -136,6 +141,7 @@ class AppSize {
   static const strokeWidthNormal = 4.0;
   static const strokeWidthBig = 7.0;
 
+  static const iconSizeMicro = 10.0;
   static const iconSizeSmall = 20.0;
   static const iconSizeBig = 32.0;
   static const iconSizeHuge = 92.0;
@@ -158,7 +164,7 @@ class AppSize {
   static const fontNormalBig = 18.0;
   static const fontMedium = 20.0;
   static const fontBig = 24.0;
-  static const fontBigExtra = 30.0;
+  static const fontBigExtra = 32.0;
   static const fontHuge = 36.0;
 
   static const paddingMinimum = 1.0;

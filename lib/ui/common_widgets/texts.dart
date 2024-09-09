@@ -2,13 +2,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../ui_constants.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
+import '../../util/context_extensions.dart';
 
 const _defaultTextLinkColorDisabled = Colors.white30;
 const _defaultTextSize = AppSize.fontRegular;
 const _defaultFontWeight = FontWeight.w400;
 const _defaultMaxLines = 1;
 const _defaultTextOverflow = TextOverflow.ellipsis;
+const _defaultFontFamily = 'Raleway'; // Set the default font family
 
 class Texts extends StatelessWidget {
   const Texts(
@@ -73,7 +74,6 @@ class Texts extends StatelessWidget {
           showShadow: showShadow,
         );
 
-  //
   final String? text;
   final Color? color;
   final Color? linkColor;
@@ -117,6 +117,7 @@ class Texts extends StatelessWidget {
                     fontWeight:
                         data.fontWeight ?? fontWeight ?? _defaultFontWeight,
                     height: height,
+                    fontFamily: _defaultFontFamily, // Use Raleway font
                   ),
                 ),
               )
@@ -145,6 +146,7 @@ class Texts extends StatelessWidget {
               ),
             ]
           : null,
+      fontFamily: _defaultFontFamily, // Use Raleway font
     );
 
     if (isLink ?? false) {
@@ -254,7 +256,7 @@ class RichTextData {
     this.text, {
     this.fontWeight,
     this.size,
-  }) : color = Colors.red.withOpacity(0.4);
+  }) : color = Colors.pink.withOpacity(0.4);
 
   RichTextData.bold(
     this.text, {

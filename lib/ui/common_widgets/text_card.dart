@@ -24,7 +24,8 @@ class TextCard extends StatelessWidget {
       ),
       child: Padding(
         padding: AppPadding.horizontalHuge, // Add horizontal padding
-        child: Texts(  // Assuming 'Texts' is your custom text widget
+        child: Texts(
+          // Assuming 'Texts' is your custom text widget
           text,
           fontSize: AppSize.fontNormal,
           fontWeight: FontWeight.w500,

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:geolocation_poc/ui/ui_constants.dart';
+import '../../ui/ui_constants.dart';
 
 import '../common_widgets/buttons.dart';
 import '../common_widgets/spinner.dart';

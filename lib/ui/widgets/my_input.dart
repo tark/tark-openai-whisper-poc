@@ -4,10 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
-import 'package:geolocation_poc/util/string_extensions.dart';
-import 'package:geolocation_poc/util/util.dart';
+import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
+import 'package:tark_openai_whisper_poc/util/string_extensions.dart';
 
+import '../../util/util.dart';
+import '../common_widgets/date_picker_modal.dart';
 import '../common_widgets/texts.dart';
 import '../common_widgets/animated_icon.dart';
 import '../ui_constants.dart';
@@ -155,6 +156,23 @@ class _MyInputState extends State<MyInput> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: _isDate()
+          ? () async {
+              final date = await showBottomModal<DateTime>(
+                context: context,
+                builder: (c) => DatePickerModal(
+                  initialDate: widget.dateController?.date ?? DateTime.now(),
+                ),
+              );
+
+              if (date != null) {
+                // using UTC, because we keep dates in UTC on server side
+                final dateUtc = DateTime.utc(date.year, date.month, date.day);
+                widget.dateController?.date = dateUtc;
+                _controller.text = dateFormat.format(dateUtc);
+              }
+            }
+          : null,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Container(
@@ -325,7 +343,7 @@ class _MyInputState extends State<MyInput> {
         ClipRRect(
           borderRadius: BorderRadius.circular(2),
           child: Image.network(
-            'https://flagsapi.com/${code.toUpperCase()}/flat/64.png',
+            'https://flagsapi.com/${code?.toUpperCase()}/flat/64.png',
             width: 24,
             height: 24,
             fit: BoxFit.fill,

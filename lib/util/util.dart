@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
+import '../../util/context_extensions.dart';
 
 import '../ui/common_widgets/texts.dart';
 import '../ui/ui_constants.dart';
@@ -57,7 +56,6 @@ Future<T?> showBottomModal<T>({
   required BuildContext context,
   required WidgetBuilder builder,
   Color? background,
-  Color? barrierColor, // Use this parameter
 }) async {
   final result = await showModalBottomSheet<T>(
     isScrollControlled: true,
@@ -67,7 +65,7 @@ Future<T?> showBottomModal<T>({
         top: Radius.circular(16),
       ),
     ),
-    barrierColor: barrierColor, // Use the barrierColor passed to this function
+    barrierColor: context.dialogBarrier,
     builder: (c) {
       return ClipRRect(
         borderRadius: const BorderRadius.vertical(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
+import 'package:tark_openai_whisper_poc/util/context_extensions.dart';
 
 class ColoredBars extends StatelessWidget {
   const ColoredBars({

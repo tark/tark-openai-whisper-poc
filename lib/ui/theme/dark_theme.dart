@@ -7,10 +7,10 @@ const fontFamily = 'Roboto';
 final darkTheme = ThemeData(
   scaffoldBackgroundColor: AppColorsDarkTheme.background,
   brightness: Brightness.dark,
-  chipTheme: ChipThemeData(
+  chipTheme: const ChipThemeData(
     backgroundColor: AppColorsDarkTheme.cardBackground,
     elevation: 0,
-    labelPadding: const EdgeInsets.only(
+    labelPadding: EdgeInsets.only(
       left: 11,
       top: 5,
       bottom: 5,
@@ -27,7 +27,7 @@ final darkTheme = ThemeData(
       fontWeight: FontWeight.w900,
     ),
   ),
-  snackBarTheme: SnackBarThemeData(
+  snackBarTheme: const SnackBarThemeData(
     contentTextStyle: TextStyle(
       fontFamily: fontFamily,
     ),
@@ -69,21 +69,15 @@ final darkTheme = ThemeData(
     surface: AppColorsDarkTheme.background,
     onSurface: AppColorsDarkTheme.text,
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     headlineLarge: TextStyle(
       fontFamily: fontFamily,
       fontSize: 32,
       fontWeight: FontWeight.w700,
     ),
-    bodyLarge: const TextStyle(
+    bodyLarge: TextStyle(
       color: AppColorsDarkTheme.text,
     ),
-    // subtitle: TextStyle(
-    //   fontFamily: fontFamily,
-    //   fontSize: 14,
-    //   fontWeight: FontWeight.w400,
-    //   color: AppColorsDarkTheme.text,
-    // ),
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColorsDarkTheme.background,

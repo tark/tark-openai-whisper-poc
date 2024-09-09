@@ -85,12 +85,12 @@ class _DatePickerState extends State<DatePicker> {
           headerHeight: 70,
           selectionShape: DateRangePickerSelectionShape.rectangle,
           yearCellStyle: DateRangePickerYearCellStyle(
-            textStyle:  TextStyle(
+            textStyle: TextStyle(
               fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.primary,
               fontSize: AppSize.fontNormal,
             ),
-            todayTextStyle:  TextStyle(
+            todayTextStyle: TextStyle(
               fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.primary,
               fontSize: AppSize.fontNormal,

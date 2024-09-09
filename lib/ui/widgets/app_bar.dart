@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocation_poc/ui/ui_constants.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
+import '../../ui/ui_constants.dart';
+import '../../util/context_extensions.dart';
 
 import '../../util/log.dart';
 import '../common_widgets/texts.dart';

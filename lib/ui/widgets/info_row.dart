@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:geolocation_poc/util/context_extensions.dart';
 
+import '../../util/context_extensions.dart';
 import '../common_widgets/texts.dart';
 import '../ui_constants.dart';
 

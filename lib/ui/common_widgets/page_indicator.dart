@@ -17,7 +17,7 @@ class PageIndicator extends StatelessWidget {
     required this.inactiveColor,
     this.width = 28.0,
     this.height = 2.0,
-    this.gap = 8.0,  // Adjusted to create space between indicators
+    this.gap = 8.0, // Adjusted to create space between indicators
   });
 
   @override
