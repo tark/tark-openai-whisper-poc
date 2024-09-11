@@ -26,7 +26,7 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-       flutter-version: '3.24.2'  
+        flutter-version: '3.24.2'  
 
     - name: Clear Flutter/Dart Cache
       run: |
@@ -40,6 +40,11 @@ jobs:
 
     - name: Install dependencies
       run: flutter pub get
+
+    - name: Set environment variables from GitHub Secrets
+      run: |
+        echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+      shell: bash
 
     - name: Build APK
       run: flutter build apk --release  
