@@ -53,10 +53,10 @@ jobs:
       shell: bash
       
     - name: Build APK
-      run: flutter build apk --release  
+      run: flutter build apk --release --no-shrink
 
     - name: Build AAB
-      run: flutter build appbundle --release
+     run: flutter build appbundle --release --no-shrink
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
