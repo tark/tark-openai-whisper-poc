@@ -45,7 +45,6 @@ dependencies:
   shimmer: ^2.0.0
   easy_localization: ^3.0.1
   permission_handler: ^11.0.1
-  bugsnag_flutter: ^3.0.0
   avatar_glow: ^2.0.2
   ndef: ^0.3.1
   translit: ^2.0.1
