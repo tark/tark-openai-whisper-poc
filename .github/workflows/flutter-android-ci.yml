@@ -56,7 +56,7 @@ jobs:
       run: flutter build apk --release --no-shrink
 
     - name: Build AAB
-     run: flutter build appbundle --release --no-shrink
+      run: flutter build appbundle --release --no-shrink
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
