@@ -44,8 +44,14 @@ jobs:
     - name: Set environment variables from GitHub Secrets
       run: |
         echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+        # Add any other environment variables here
       shell: bash
 
+    - name: Set up .env file (if applicable)
+      run: |
+        echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" > .env
+      shell: bash
+      
     - name: Build APK
       run: flutter build apk --release  
 
